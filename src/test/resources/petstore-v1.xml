@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="petStore"
-            class="org.liteSrping.service.v1.PetStoreService">
+            class="org.liteSpring.service.v1.PetStoreService">
     </bean>
 
 </beans>

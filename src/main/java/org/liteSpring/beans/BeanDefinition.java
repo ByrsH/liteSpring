@@ -7,4 +7,5 @@ package org.liteSpring.beans;
  * @Modified By:
  */
 public interface BeanDefinition {
+    String getBeanClassName();
 }

@@ -1,5 +1,7 @@
 package org.liteSpring.beans.factory;
 
+import org.liteSpring.beans.BeanDefinition;
+
 /**
  * @Author: yangrusheng
  * @Description:
@@ -7,4 +9,7 @@ package org.liteSpring.beans.factory;
  * @Modified By:
  */
 public interface BeanFactory {
+    BeanDefinition getBeanDefinition(String beanID);
+
+    Object getBean(String beanID);
 }

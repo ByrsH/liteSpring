@@ -21,7 +21,7 @@ public class BeanFactoryTest {
         BeanFactory factory = new DefaultBeanFactory("petstore-v1.xml");
         BeanDefinition bd = factory.getBeanDefinition("petStore");
 
-        assertEquals("org.liteSrping.service.v1.PetStoreService", bd.getBeanClassName());
+        assertEquals("org.liteSpring.service.v1.PetStoreService", bd.getBeanClassName());
 
         PetStoreService petStore = (PetStoreService) factory.getBean("petStore");
         assertNotNull(petStore);
