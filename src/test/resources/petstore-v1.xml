@@ -9,4 +9,8 @@
             class="org.liteSpring.service.v1.PetStoreService">
     </bean>
 
+    <bean id="invalidBean"
+          class="xxx.xxxxxx">
+    </bean>
+
 </beans>

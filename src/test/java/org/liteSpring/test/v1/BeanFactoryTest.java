@@ -1,7 +1,10 @@
 package org.liteSpring.test.v1;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.liteSpring.beans.BeanDefinition;
+import org.liteSpring.beans.factory.BeanCreationException;
+import org.liteSpring.beans.factory.BeanDefinitionStoreException;
 import org.liteSpring.beans.factory.BeanFactory;
 import org.liteSpring.beans.factory.support.DefaultBeanFactory;
 import org.liteSpring.service.v1.PetStoreService;
@@ -27,4 +30,26 @@ public class BeanFactoryTest {
         assertNotNull(petStore);
     }
 
+    @Test
+    public void testInvalidBean() {
+        BeanFactory factory = new DefaultBeanFactory("petstore-v1.xml");
+        try {
+            factory.getBean("invalidBean");
+        } catch (BeanCreationException e) {
+            return;
+        }
+
+        Assert.fail("expect BeanCreationException ");
+    }
+
+    @Test
+    public void testInvalidXML() {
+        try {
+            new DefaultBeanFactory("xxxx.xml");
+        } catch (BeanDefinitionStoreException e) {
+            return;
+        }
+
+        Assert.fail("expect BeanDefinitionStoreException ");
+    }
 }
